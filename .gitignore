@@ -21,3 +21,5 @@ notebook-playground.ipynb
 
 # Ingore Apps
 apps
+*/__pycache__
+*.pyc
