@@ -54,7 +54,7 @@ class SGDRegressor:
         plt.yscale('log')
         plt.show()
     
-data = pd.read_csv('algorithms/LinearRegression/data.csv')
+data = pd.read_csv('data.csv')
 X = data.studytime
 y = data.score
 

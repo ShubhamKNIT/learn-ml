@@ -36,10 +36,10 @@ class MultipleLinearRegression:
         return self
 
     def predict(self, X_test):
-        return (self.coef_.T @ X_test) + self.intercept_
+        return np.dot(X_test, self.coef_) + self.intercept_
 
 
-data = pd.read_csv('algorithms/LinearRegression/data.csv')
+data = pd.read_csv('data.csv')
 
 X = data.studytime
 y = data.score

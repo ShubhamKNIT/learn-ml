@@ -66,7 +66,7 @@ class MiniBGDRegressor:
         plt.show()
 
 # Load the dataset
-data = pd.read_csv('algorithms/LinearRegression/data.csv')
+data = pd.read_csv('data.csv')
 X = data.studytime.values.reshape(-1, 1)  # Ensure X is 2D
 y = data.score.values
 

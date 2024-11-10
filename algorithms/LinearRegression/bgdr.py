@@ -10,7 +10,7 @@ class BGDRegressor:
         In one iteration the parameters for model is 
         adjusted for given input training data set
     """
-    def __init__(self, learning_rate=0.001, epochs=170):
+    def __init__(self, learning_rate=0.001, epochs=200):
         self.intercept_ = None
         self.coef_ = None
         self.loss_history = []
@@ -37,7 +37,7 @@ class BGDRegressor:
             
             # loss_history
             errors = (y_train - y_pred)
-            self.loss_history.append(errors ** 2)
+            self.loss_history.append(np.mean(errors ** 2))
 
         return self
 
@@ -53,7 +53,7 @@ class BGDRegressor:
         plt.yscale('log')  # Log scale for better visibility
         plt.show()
 
-data = pd.read_csv('algorithms/LinearRegression/data.csv')
+data = pd.read_csv('data.csv')
 X = data.studytime
 y = data.score
 
@@ -65,6 +65,5 @@ bgdr.fit(X, y)
 
 print(bgdr.predict([2.04]))
 print(bgdr.coef_, bgdr.intercept_)
-# bgdr.plot_loss()
-bgdr.plot_contour()
+bgdr.plot_loss()
 print(bgdr.loss_history)
